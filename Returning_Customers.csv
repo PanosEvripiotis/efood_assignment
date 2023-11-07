@@ -1,0 +1,25 @@
+user_class_name,cuisine,nr_of_returning,ttl_users
+Loyal,Meat,8748,8971
+All Star,Meat,9033,9257
+Infrequent,Meat,14137,16586
+One Timers,Meat,4323,11611
+Common User,Meat,18076,19125
+High Spenders,Meat,7770,8346
+Loyal,Italian,4953,5046
+All Star,Italian,7076,7199
+Infrequent,Italian,8190,9453
+One Timers,Italian,2457,7377
+Common User,Italian,11345,11805
+High Spenders,Italian,6187,6569
+Loyal,Breakfast,10980,11372
+All Star,Breakfast,9445,9752
+Infrequent,Breakfast,10436,12168
+One Timers,Breakfast,2660,6812
+Common User,Breakfast,15211,16112
+High Spenders,Breakfast,5405,5679
+Loyal,Street food,4059,4123
+All Star,Street food,5903,5987
+Infrequent,Street food,6416,7296
+One Timers,Street food,1901,5450
+Common User,Street food,9262,9636
+High Spenders,Street food,5267,5506

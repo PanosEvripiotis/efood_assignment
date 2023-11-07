@@ -1,0 +1,7 @@
+user_class_name,nr_of_uniq_users,avg_orders_per_user,avg_amt_per_order,avg_amt_per_user,ttl_orders,nr_of_orders_w_coupon,nr_of_orders_w_offers,ttl_amount
+Loyal,11372,7.35,4.17,30.62,83605,2426,11436,348250.0
+All Star,9752,12.52,5.9,73.82,122115,4124,13926,719888.0
+Infrequent,12168,1.54,6.75,10.36,18683,308,1800,126098.0
+One Timers,6812,1.04,7.41,7.69,7069,344,632,52377.0
+Common User,16112,2.44,6.85,16.7,39285,431,3885,269051.0
+High Spenders,5679,2.94,9.36,27.55,16717,215,1499,156457.0
