@@ -2,7 +2,6 @@
 
 -- Following are the SQL queries I used in Big Query to explore the dataset. Many of those things will be used in the dashboard and the presentation
 
-
 -- I began the analysis by checking for null values in each column using the 'is null' function like the following
 
 select vertical
@@ -147,50 +146,30 @@ left join v1 b on a.user_id = b.user_id and b.nr_of_appearances > 1
 where vertical <> 'Local Stores'
 group by 1
 
--- 7) The last thing to check before moving on to the dashboard is the average wait time between orders per user
 
+-- 7) One last check that will help in our main question is to check which classes use coupons and offers
 
-with v1 as (
-        select user_id,
-                'yes' as returning_cust_flag,
-                count(*) as nr_of_appearances
-        from `efood2022-404016.main_assessment.orders`
-        where vertical <> 'Local Stores'
-        group by 1        
-)
 select  user_class_name,
-        count(distinct case when returning_cust_flag = 'yes' then a.user_id end) as nr_of_returning,
-        count(distinct a.user_id)
-from `efood2022-404016.main_assessment.orders` a
-left join v1 b on a.user_id = b.user_id and b.nr_of_appearances > 1
-where vertical <> 'Local Stores'
+        count(distinct user_id) nr_of_uniq_users,
+        round(count(order_id)/count(distinct user_id), 2) avg_orders_per_user,
+        round(sum(amount)/count(order_id), 2) avg_amt_per_order,
+        round(sum(amount)/count(distinct user_id), 2) avg_amt_per_user,
+        count(order_id) ttl_orders,
+        sum(case when coupon_discount_amount > 0 then 1 else 0 end) as nr_of_orders_w_coupon,
+        sum(case when order_contains_offer = true then 1 else 0 end) as nr_of_orders_w_offers,
+        round(sum(amount)) as ttl_amount
+from `efood2022-404016.main_assessment.orders`
+where cuisine = 'Breakfast'
 group by 1
 
---average wait time between orders
-
-WITH PreviousOrder AS (
-    SELECT 
-        user_id, 
-        order_timestamp AS prev_order_timestamp,
-        LAG(order_timestamp) OVER (PARTITION BY user_id ORDER BY order_timestamp) AS prev_order_timestamp_lag
-    FROM 
-        `efood2022-404016.main_assessment.orders`
-)
-SELECT 
-    user_id, 
-    --prev_order_timestamp,
-    --prev_order_timestamp_lag,
-    --TIMESTAMP_DIFF(prev_order_timestamp, prev_order_timestamp_lag, day)
-    round(AVG(TIMESTAMP_DIFF(prev_order_timestamp, prev_order_timestamp_lag, day)), 1) AS average_wait_time_seconds
-FROM 
-    PreviousOrder
-WHERE 
-    prev_order_timestamp_lag IS NOT NULL
-GROUP BY 
-    user_id
-
-
 -- We will explore the outcomes and importance of the above queries in the dashboard and the presentation
+
+
+
+
+
+
+
 
 
 
