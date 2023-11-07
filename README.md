@@ -20,6 +20,6 @@ Tableau dashborad link: https://public.tableau.com/views/efood_assignment/Orders
 # Files
 
 1) Readme: Contains some generics comments and information on the assignment solutions
-1) sql_queries: Contains all queries for the exploratory analysis
-2) presentation: .ppt file with the presentaion
+2) sql_queries: Contains all queries for the exploratory analysis
+3) presentation: .ppt file with the presentaion
 
