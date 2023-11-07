@@ -15,7 +15,7 @@ This repository contains all neccessary files and and data that were used for th
 3) Lastly, besides the code and the link to the tableau dashboard you will also find in this repo my presentation in the form of a file which will contain findings and graphs that were copied from the tableau dashboard.
 4) You will not find any instructions here since the code I will upload can be simply run in Biq Query after loading the input file into it. You can interact with the visualization just by clicking in the link provided below. The presentation can be simply downloaded.
 
-Tableau dashborad link: 
+Tableau dashborad link: https://public.tableau.com/views/efood_assignment/OrdersByUserClassandcuisine?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link
 
 # Files
 
